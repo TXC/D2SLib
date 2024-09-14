@@ -28,7 +28,7 @@ public class D2STest
     [DataRow("Sorceress", CharacterClass.Sorceress)]
     public void VerifyCanReadSimple115Save(string Name, CharacterClass ClassId)
     {
-        D2S character = Core.ReadD2S(File.ReadAllBytes(@$"Resources\D2S\1.15\{Name}.d2s"));
+        D2S character = Core.ReadD2S(File.ReadAllBytes(@$"Resources/D2S/1.15/{Name}.d2s"));
         character.Name.Should().Be(Name);
         character.ClassId.Should().Be(ClassId);
 
@@ -38,7 +38,7 @@ public class D2STest
     [TestMethod]
     public void VerifyCanReadComplex115Save()
     {
-        D2S character = Core.ReadD2S(File.ReadAllBytes(@"Resources\D2S\1.15\DannyIsGreat.d2s"));
+        D2S character = Core.ReadD2S(File.ReadAllBytes(@"Resources/D2S/1.15/DannyIsGreat.d2s"));
         character.Name.Should().Be("DannyIsGreat");
         character.ClassId.Should().Be(CharacterClass.Sorceress);
 
@@ -48,7 +48,7 @@ public class D2STest
     [TestMethod]
     public void VerifyCanWriteComplex115Save()
     {
-        byte[] input = File.ReadAllBytes(@"Resources\D2S\1.15\DannyIsGreat.d2s");
+        byte[] input = File.ReadAllBytes(@"Resources/D2S/1.15/DannyIsGreat.d2s");
         D2S character = Core.ReadD2S(input);
         byte[] ret = Core.WriteD2S(character);
         //File.WriteAllBytes(Environment.ExpandEnvironmentVariables($"%userprofile%/Saved Games/Diablo II Resurrected Tech Alpha/{character.Name}.d2s"), ret);

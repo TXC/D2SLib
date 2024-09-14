@@ -19,45 +19,19 @@ jobs:
     #    ports:
     #      - 1433:1433
 
+    strategy:
+      matrix:
+        version: [3.1.x, 6.0.x, 7.0.x, 8.0.x]
+
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: ${{ matrix.version }}
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
-
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: 8.0.x
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Release
-      run: |
-        dotnet publish Purchase.ServiceWorker.Currency\Purchase.ServiceWorker.Currency.csproj --output "build/Purchase.ServiceWorker"
-        dotnet publish Purchase.ServiceWorker.Feeds\Purchase.ServiceWorker.Feeds.csproj --output "build/Purchase.ServiceWorker"
-        dotnet publish Purchase.Web\Purchase.Web.csproj /p:PublishProfile=FolderProfile --output "build/Purchase.Web"
-
-    - name: Create Purchase.ServiceWorker artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: Purchase.ServiceWorker
-        path: build/Purchase.ServiceWorker
-
-    - name: Create Purchase.Web artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: Purchase.Web
-        path: build/Purchase.Web
-

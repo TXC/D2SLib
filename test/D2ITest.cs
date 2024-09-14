@@ -14,7 +14,7 @@ namespace D2SLibTests
         public void VerifyCanReadSharedStash115()
         {
             //0x61 == 1.15
-            D2I stash = Core.ReadD2I(File.ReadAllBytes(@"Resources\D2I\1.15\SharedStash_SoftCore.d2i"), 0x61);
+            D2I stash = Core.ReadD2I(File.ReadAllBytes(@"Resources/D2I/1.15/SharedStash_SoftCore.d2i"), 0x61);
 
             stash.ItemList.Count.Should().Be(8);
             stash.ItemList.Items[0].Code.Should().Be("rng ");
