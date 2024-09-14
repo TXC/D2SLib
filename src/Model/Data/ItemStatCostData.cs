@@ -1,4 +1,6 @@
-﻿namespace D2SLib.Model.Data;
+﻿using System.IO;
+
+namespace D2SLib.Model.Data;
 
 public sealed class ItemStatCostData : DataFile
 {

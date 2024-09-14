@@ -1,0 +1,28 @@
+name: Setup .NET
+description: Setting up .NET
+inputs:
+  dotnet-version:
+    description: 'Optional SDK version(s) to use. If not provided, will install global.json version when available. Examples: 2.2.104, 3.1, 3.1.x, 3.x, 6.0.2xx'
+    default: '8.0.x'
+  source-url:
+    description: 'Optional package source for which to set up authentication. Will consult any existing NuGet.config in the root of the repo and provide a temporary NuGet.config using the NUGET_AUTH_TOKEN environment variable as a ClearTextPassword'
+  owner:
+    description: 'Optional OWNER for using packages from GitHub Package Registry organizations/users other than the current repository''s owner. Only used if a GPR URL is also provided in source-url'
+  config-file:
+    description: 'Optional NuGet.config location, if your NuGet.config isn''t located in the root of the repo.'
+runs:
+  using: composite
+  steps:
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ inputs.dotnet-version }}
+        source-url: ${{ inputs.source-url }}
+        owner: ${{ inputs.owner }}
+        config-file: ${{ inputs.config-file }}
+      env:
+        NUGET_AUTH_TOKEN: ${{ env.NUGET_AUTH_TOKEN }}
+
+    - name: Restore dependencies
+      shell: bash
+      run: dotnet restore

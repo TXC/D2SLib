@@ -1,5 +1,8 @@
 ﻿using D2SLib.IO;
+using System;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using System.Threading;
 
 namespace D2SLib.Model.Save;
 

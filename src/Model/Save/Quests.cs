@@ -1,5 +1,7 @@
 ﻿using D2SLib.IO;
+using System;
 using System.Diagnostics;
+using System.Threading;
 
 namespace D2SLib.Model.Save;
 

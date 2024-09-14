@@ -1,4 +1,8 @@
 ﻿using D2SLib.IO;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 
 namespace D2SLib.Model.Save;
 

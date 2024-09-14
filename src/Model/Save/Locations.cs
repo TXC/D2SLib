@@ -1,5 +1,6 @@
 ﻿using D2SLib.IO;
 using System.Diagnostics.CodeAnalysis;
+using System;
 
 namespace D2SLib.Model.Save;
 

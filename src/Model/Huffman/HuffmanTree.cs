@@ -1,4 +1,6 @@
 ﻿using D2SLib.IO;
+using System;
+using System.Collections.Generic;
 
 namespace D2SLib.Model.Huffman;
 

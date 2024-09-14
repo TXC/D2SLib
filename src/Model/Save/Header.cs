@@ -1,4 +1,5 @@
 ﻿using D2SLib.IO;
+using System;
 using System.Buffers.Binary;
 
 namespace D2SLib.Model.Save;

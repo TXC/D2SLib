@@ -1,7 +1,10 @@
-﻿using Microsoft.Toolkit.HighPerformance.Buffers;
+﻿using CommunityToolkit.HighPerformance.Buffers;
+using System;
 using System.Buffers;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using static D2SLib.IO.InternalBitArray;
 
 namespace D2SLib.IO;

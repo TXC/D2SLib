@@ -1,4 +1,6 @@
 ﻿using D2SLib.Model.Data;
+using System;
+using System.IO;
 using System.Reflection;
 
 namespace D2SLib;

@@ -1,9 +1,23 @@
 ﻿using D2SLib.IO;
-using Microsoft.Toolkit.HighPerformance.Buffers;
+using CommunityToolkit.HighPerformance.Buffers;
+using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Text.Json.Serialization;
 
 namespace D2SLib.Model.Save;
+
+public enum CharacterClass : byte
+{
+    Amazon = 0x00,
+    Sorceress = 0x01,
+    Necromancer = 0x02,
+    Paladin = 0x03,
+    Druid = 0x05,
+    Barbarian = 0x04,
+    Assassin = 0x06,
+}
+
 
 public sealed class D2S : IDisposable
 {
@@ -15,7 +29,7 @@ public sealed class D2S : IDisposable
         Status = Status.Read(reader.ReadByte());
         Progression = reader.ReadByte();
         Unk0x0026 = reader.ReadBytes(2);
-        ClassId = reader.ReadByte();
+        ClassId = (CharacterClass)reader.ReadByte();
         Unk0x0029 = reader.ReadBytes(2);
         Level = reader.ReadByte();
         Created = reader.ReadUInt32();
@@ -63,7 +77,7 @@ public sealed class D2S : IDisposable
     [JsonIgnore]
     public byte[]? Unk0x0026 { get; set; }
     //0x0028
-    public byte ClassId { get; set; }
+    public CharacterClass ClassId { get; set; }
     //0x0029 [unk = 0x10, 0x1E]
     [JsonIgnore]
     public byte[]? Unk0x0029 { get; set; }
@@ -125,7 +139,7 @@ public sealed class D2S : IDisposable
         writer.WriteByte(Progression);
         //Unk0x0026
         writer.WriteBytes(Unk0x0026 ?? new byte[2]);
-        writer.WriteByte(ClassId);
+        writer.WriteByte((byte)ClassId);
         //Unk0x0029
         writer.WriteBytes(Unk0x0029 ?? stackalloc byte[] { 0x10, 0x1e });
         writer.WriteByte(Level);

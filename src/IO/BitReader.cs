@@ -1,6 +1,9 @@
-﻿using Microsoft.Toolkit.HighPerformance.Buffers;
+﻿using CommunityToolkit.HighPerformance.Buffers;
+using D2SLib.Extensions;
+using System;
 using System.Buffers;
 using System.Text;
+using System.Threading;
 using static System.Buffers.Binary.BinaryPrimitives;
 using static D2SLib.IO.InternalBitArray;
 

@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net6.0;netcoreapp3.1</TargetFrameworks>
-	<LangVersion>10</LangVersion>
+    <TargetFrameworks>netcoreapp3.1;net6.0;net7.0;net8.0</TargetFrameworks>
+    <LangVersion>10</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>D2SLib_Benchmark</RootNamespace>
@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.13.1" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.14.0" />
   </ItemGroup>
 
   <ItemGroup>

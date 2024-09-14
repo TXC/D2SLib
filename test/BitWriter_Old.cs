@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 
 namespace D2SLibTests;
 
@@ -103,5 +104,9 @@ public class BitWriter_Old : IDisposable
     public void SeekBits(int bitPosition) => Position = bitPosition;
     public void Seek(int bytePostion) => SeekBits(bytePostion * 8);
     public void Align() => Position = (Position + 7) & ~7;
-    public void Dispose() => _bits = null!;
+    public void Dispose()
+    {
+        _bits = null!;
+        GC.SuppressFinalize(this);
+    }
 }

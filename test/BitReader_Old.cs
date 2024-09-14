@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 
 namespace D2SLibTests;
 
@@ -81,5 +82,9 @@ public class BitReader_Old : IDisposable
 
     public void Align() => Position = (Position + 7) & ~7;
 
-    public void Dispose() => _bits = null!;
+    public void Dispose()
+    {
+        _bits = null!;
+        GC.SuppressFinalize(this);
+    }
 }

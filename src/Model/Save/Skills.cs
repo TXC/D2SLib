@@ -1,4 +1,6 @@
 ﻿using D2SLib.IO;
+using System;
+using System.Collections.Generic;
 
 namespace D2SLib.Model.Save;
 
@@ -6,7 +8,7 @@ public class ClassSkills
 {
     private const int SKILL_COUNT = 30;
 
-    private static readonly uint[] SKILL_OFFSETS = { 6, 36, 66, 96, 126, 221, 251 };
+    private static readonly uint[] SKILL_OFFSETS = [6, 36, 66, 96, 126, 221, 251];
     public ushort? Header { get; set; }
     public List<ClassSkill> Skills { get; } = new List<ClassSkill>(SKILL_COUNT);
 
@@ -21,13 +23,13 @@ public class ClassSkills
         }
     }
 
-    public static ClassSkills Read(IBitReader reader, int playerClass)
+    public static ClassSkills Read(IBitReader reader, CharacterClass playerClass)
     {
         var classSkills = new ClassSkills
         {
             Header = reader.ReadUInt16()
         };
-        uint offset = SKILL_OFFSETS[playerClass];
+        uint offset = SKILL_OFFSETS[(byte)playerClass];
         for (uint i = 0; i < SKILL_COUNT; i++)
         {
             var skill = ClassSkill.Read(offset + i, reader.ReadByte());
@@ -37,7 +39,7 @@ public class ClassSkills
     }
 
     [Obsolete("Try the direct-read overload!")]
-    public static ClassSkills Read(ReadOnlySpan<byte> bytes, int playerClass)
+    public static ClassSkills Read(ReadOnlySpan<byte> bytes, CharacterClass playerClass)
     {
         using var reader = new BitReader(bytes);
         return Read(reader, playerClass);

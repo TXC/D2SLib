@@ -1,20 +1,23 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net6.0</TargetFrameworks>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
-	<ImplicitUsings>enable</ImplicitUsings>
-	<LangVersion>latest</LangVersion>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
     <Company />
-    <Authors>dschu012</Authors>
+    <Authors>TXC</Authors>
     <PackageTags>d2s d2i diablo-ii diablo2 d2r</PackageTags>
     <Description>Read and write saves from Diablo 2. Supports versions 1.10 through Diablo II: Resurrected (1.15). Supports both d2s (player saves) and d2i (shared stash).</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <RepositoryUrl>https://github.com/dschu012/D2SLib</RepositoryUrl>
+    <RepositoryUrl>https://github.com/TXC/D2SLib</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Version>1.0.2</Version>
+    <Version>1.0.0</Version>
     <EnableNETAnalyzers>True</EnableNETAnalyzers>
     <AnalysisLevel>latest</AnalysisLevel>
+    <IncludeSource>True</IncludeSource>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,7 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Toolkit.HighPerformance" Version="7.1.2" />
+    <PackageReference Include="CommunityToolkit.HighPerformance" Version="8.3.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.4" />
   </ItemGroup>
 
 </Project>

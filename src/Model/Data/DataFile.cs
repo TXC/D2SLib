@@ -1,6 +1,9 @@
-﻿using Microsoft.Toolkit.HighPerformance;
-using Microsoft.Toolkit.HighPerformance.Buffers;
+﻿using CommunityToolkit.HighPerformance;
+using CommunityToolkit.HighPerformance.Buffers;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 
 namespace D2SLib.Model.Data;
 

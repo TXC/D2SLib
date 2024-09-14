@@ -1,4 +1,6 @@
-﻿using System.Buffers;
+﻿using System;
+using System.Buffers;
+using System.Collections.Generic;
 
 namespace D2SLib.IO;
 

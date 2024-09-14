@@ -12,6 +12,14 @@ internal class BenchmarkConfig : ManualConfig
     public BenchmarkConfig()
     {
         AddJob(Job.Default
+            .WithRuntime(CoreRuntime.Core80)
+            .WithPlatform(Platform.X64)
+            .WithJit(Jit.RyuJit));
+        AddJob(Job.Default
+            .WithRuntime(CoreRuntime.Core70)
+            .WithPlatform(Platform.X64)
+            .WithJit(Jit.RyuJit));
+        AddJob(Job.Default
             .WithRuntime(CoreRuntime.Core60)
             .WithPlatform(Platform.X64)
             .WithJit(Jit.RyuJit));

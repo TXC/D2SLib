@@ -13,7 +13,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D2SLib_Nuget.Benchmark", "b
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FCAB7929-60A6-4DA7-9C96-0BE97B160694}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Makefile = Makefile
+		README.md = README.md
 		benchmarks\Results.txt = benchmarks\Results.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{0AF21012-C7C1-4E2D-A345-A62CFA570000}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "setup-dotnet", "setup-dotnet", "{3F06E9F0-D418-4258-A455-F9EEA7351FF0}"
+	ProjectSection(SolutionItems) = preProject
+		.github\setup-dotnet\action.yml = .github\setup-dotnet\action.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{7B2D74EB-C14E-40AB-8B99-853551086FF1}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\deploy-github-packages.yml = .github\workflows\deploy-github-packages.yml
+		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 	EndProjectSection
 EndProject
 Global
@@ -41,6 +57,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0AF21012-C7C1-4E2D-A345-A62CFA570000} = {FCAB7929-60A6-4DA7-9C96-0BE97B160694}
+		{3F06E9F0-D418-4258-A455-F9EEA7351FF0} = {0AF21012-C7C1-4E2D-A345-A62CFA570000}
+		{7B2D74EB-C14E-40AB-8B99-853551086FF1} = {0AF21012-C7C1-4E2D-A345-A62CFA570000}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1F294F48-D408-43E4-BED3-97DF83E20574}

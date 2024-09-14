@@ -1,4 +1,8 @@
 ﻿using D2SLib.IO;
+using FluentAssertions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+//using System.IO;
 using System.Text;
 using static System.Buffers.Binary.BinaryPrimitives;
 
@@ -32,19 +36,19 @@ public sealed class BitReaderTests
         }
         Console.WriteLine();
 
-        CollectionAssert.AreEqual(oldBits, newBits);
-        Assert.AreEqual(bro.Position, br.Position);
+        oldBits.Should().BeEquivalentTo(newBits);
+        bro.Position.Should().Be(br.Position);
     }
 
     [TestMethod]
     public void CanReadByte()
     {
-        byte[] bytes = new byte[] { 137 };
+        byte[] bytes = [137];
         using var bro = new BitReader_Old(bytes);
         using var br = new BitReader(bytes);
 
-        Assert.AreEqual(bro.ReadByte(), br.ReadByte());
-        Assert.AreEqual(bro.Position, br.Position);
+        bro.ReadByte().Should().Be(br.ReadByte());
+        bro.Position.Should().Be(br.Position);
     }
 
     [TestMethod]
@@ -61,8 +65,8 @@ public sealed class BitReaderTests
         var oldBits = bro.ReadBytes(95);
         var newBits = br.ReadBytes(95);
 
-        CollectionAssert.AreEqual(oldBits, newBits);
-        Assert.AreEqual(bro.Position, br.Position);
+        oldBits.Should().BeEquivalentTo(newBits);
+        bro.Position.Should().Be(br.Position);
     }
 
     [TestMethod]
@@ -73,8 +77,8 @@ public sealed class BitReaderTests
         using var bro = new BitReader_Old(bytes);
         using var br = new BitReader(bytes);
 
-        Assert.AreEqual(bro.ReadInt32(), br.ReadInt32());
-        Assert.AreEqual(bro.Position, br.Position);
+        bro.ReadInt32().Should().Be(br.ReadInt32());
+        bro.Position.Should().Be(br.Position);
     }
 
     [TestMethod]
@@ -85,8 +89,8 @@ public sealed class BitReaderTests
         using var bro = new BitReader_Old(bytes);
         using var br = new BitReader(bytes);
 
-        Assert.AreEqual(bro.ReadUInt32(), br.ReadUInt32());
-        Assert.AreEqual(bro.Position, br.Position);
+        bro.ReadUInt32().Should().Be(br.ReadUInt32());
+        bro.Position.Should().Be(br.Position);
     }
 
     [TestMethod]
@@ -97,8 +101,8 @@ public sealed class BitReaderTests
         using var bro = new BitReader_Old(bytes);
         using var br = new BitReader(bytes);
 
-        Assert.AreEqual(bro.ReadUInt16(), br.ReadUInt16());
-        Assert.AreEqual(bro.Position, br.Position);
+        bro.ReadUInt16().Should().Be(br.ReadUInt16());
+        bro.Position.Should().Be(br.Position);
     }
 
     [TestMethod]
@@ -108,7 +112,7 @@ public sealed class BitReaderTests
         using var bro = new BitReader_Old(bytes);
         using var br = new BitReader(bytes);
 
-        Assert.AreEqual(bro.ReadString(4), br.ReadString(4));
-        Assert.AreEqual(bro.Position, br.Position);
+        bro.ReadString(4).Should().Be(br.ReadString(4));
+        bro.Position.Should().Be(br.Position);
     }
 }
