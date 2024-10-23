@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\D2SLib.csproj" />
+    <ProjectReference Include="..\..\src\D2SLib\D2SLib.csproj" />
   </ItemGroup>
 
 </Project>
