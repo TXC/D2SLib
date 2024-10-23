@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D2SLib", "src\D2SLib.csproj", "{BA0A2A07-363C-4284-87C9-71F1349F0583}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D2SLib", "src\D2SLib\D2SLib.csproj", "{BA0A2A07-363C-4284-87C9-71F1349F0583}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D2SLibTests", "test\D2SLibTests.csproj", "{F2F223AD-BCE4-47B3-BAF8-DA2D533FD05F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D2SLibTests", "test\D2SLibTests\D2SLibTests.csproj", "{F2F223AD-BCE4-47B3-BAF8-DA2D533FD05F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D2SLib_Local.Benchmark", "benchmarks\D2SLib_Local.Benchmark\D2SLib_Local.Benchmark.csproj", "{3F72860B-D08C-45EE-9E1B-17888E103B62}"
 EndProject
@@ -32,6 +32,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\dotnet.yml = .github\workflows\dotnet.yml
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D2SImporter", "src\D2SImporter\D2SImporter.csproj", "{EE35A089-B4FD-49F6-B2CE-82C5C053A2BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "D2SImporterTests", "test\D2SImporterTests\D2SImporterTests.csproj", "{2108481B-B3E9-417D-A8B1-0F082AE388F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D2Shared", "src\D2Shared\D2Shared.csproj", "{2E46D2F3-51CC-4F9B-A09E-CB71DC1E1B11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D2SharedTests", "test\D2SharedTests\D2SharedTests.csproj", "{0BC3E64C-1577-4C58-8A9F-17F2D04BCBA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +62,22 @@ Global
 		{7D3FEEAB-7752-4753-9EC0-EF4E7F72EB74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D3FEEAB-7752-4753-9EC0-EF4E7F72EB74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D3FEEAB-7752-4753-9EC0-EF4E7F72EB74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE35A089-B4FD-49F6-B2CE-82C5C053A2BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE35A089-B4FD-49F6-B2CE-82C5C053A2BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE35A089-B4FD-49F6-B2CE-82C5C053A2BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE35A089-B4FD-49F6-B2CE-82C5C053A2BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2108481B-B3E9-417D-A8B1-0F082AE388F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2108481B-B3E9-417D-A8B1-0F082AE388F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2108481B-B3E9-417D-A8B1-0F082AE388F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2108481B-B3E9-417D-A8B1-0F082AE388F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E46D2F3-51CC-4F9B-A09E-CB71DC1E1B11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E46D2F3-51CC-4F9B-A09E-CB71DC1E1B11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E46D2F3-51CC-4F9B-A09E-CB71DC1E1B11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E46D2F3-51CC-4F9B-A09E-CB71DC1E1B11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BC3E64C-1577-4C58-8A9F-17F2D04BCBA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC3E64C-1577-4C58-8A9F-17F2D04BCBA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BC3E64C-1577-4C58-8A9F-17F2D04BCBA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BC3E64C-1577-4C58-8A9F-17F2D04BCBA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

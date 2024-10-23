@@ -1,0 +1,88 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <Company />
+    <Authors>TXC</Authors>
+    <PackageTags>d2s d2i diablo-ii diablo2 d2r</PackageTags>
+    <Description>Read resources from Diablo 2. Supports versions 1.10 through Diablo II: Resurrected (1.15).</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/TXC/D2SImporter</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Version>1.0.0</Version>
+    <EnableNETAnalyzers>True</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <IncludeSource>True</IncludeSource>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>$(AssemblyName)Tests</_Parameter1>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>D2SLib</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\99\Excel\Armor.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\CharStats.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\CubeMain.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\Gems.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\ItemStatCost.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\ItemTypes.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\MagicPrefix.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\MagicSuffix.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\Misc.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\MonStats.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\PlayerClass.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\Properties.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\RarePrefix.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\RareSuffix.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\Runes.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\SetItems.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\Sets.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\SkillDesc.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\Skills.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\UniqueItems.txt" />
+    <EmbeddedResource Include="Resources\99\Excel\Weapons.txt" />
+    <EmbeddedResource Include="Resources\99\Table\expansionstring.tbl" />
+    <EmbeddedResource Include="Resources\99\Table\patchstring.tbl" />
+    <EmbeddedResource Include="Resources\99\Table\string.tbl" />
+    <EmbeddedResource Include="Resources\96\Excel\Armor.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\CharStats.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\CubeMain.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\Gems.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\ItemStatCost.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\ItemTypes.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\MagicPrefix.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\MagicSuffix.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\Misc.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\MonStats.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\PlayerClass.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\Properties.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\RarePrefix.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\RareSuffix.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\Runes.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\SetItems.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\Sets.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\SkillDesc.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\Skills.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\UniqueItems.txt" />
+    <EmbeddedResource Include="Resources\96\Excel\Weapons.txt" />
+    <EmbeddedResource Include="Resources\96\Table\expansionstring.tbl" />
+    <EmbeddedResource Include="Resources\96\Table\patchstring.tbl" />
+    <EmbeddedResource Include="Resources\96\Table\string.tbl" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\D2Shared\D2Shared.csproj" />
+  </ItemGroup>
+
+</Project>
